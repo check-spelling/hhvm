@@ -113,7 +113,7 @@ struct FCallArgsBase {
     // do not need to be repacked.
     SkipRepack                   = (1 << 3),
     // Coeffects are known to be correct, no need to check.
-    // If the callee has polymoprhic coeffects, pass caller's coeffects.
+    // If the callee has polymorphic coeffects, pass caller's coeffects.
     SkipCoeffectsCheck           = (1 << 4),
     // Indicates that the caller requires the return value to be mutable
     // (not readonly)
