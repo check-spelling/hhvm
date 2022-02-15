@@ -1692,7 +1692,7 @@ void parse_numclosures(AsmState& as) {
  *                    ;
  *
  * Variables are usually allocated when first seen, but
- * declvars can be used to preallocate varibles for when
+ * declvars can be used to preallocate variables for when
  * the exact assignment matters (like for closures).
  */
 void parse_declvars(AsmState& as) {
