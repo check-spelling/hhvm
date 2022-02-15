@@ -108,7 +108,7 @@ let check_require_class_require_extends_conflict env class_pos tc =
                     }));
     env
 
-(** Check whether a class satifies all the requirements of the traits it uses,
+(** Check whether a class satisfies all the requirements of the traits it uses,
     namely [require extends] and [require implements]. *)
 let check_class env class_pos tc =
   match Cls.kind tc with
