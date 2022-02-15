@@ -112,7 +112,7 @@ impl<'arena, 'decl> Emitter<'arena, 'decl> {
     }
 
     /// Initialize the named locals table. Canonical HHBC numbering
-    /// puts the parameters first in left-to-right order, then local varables
+    /// puts the parameters first in left-to-right order, then local variables
     /// that have names from the source text. In HHAS those names must appear
     /// in the `.decl_vars` directive.
     pub fn init_named_locals(&mut self, names: impl IntoIterator<Item = Str<'arena>>) {
