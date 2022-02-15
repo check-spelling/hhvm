@@ -218,7 +218,7 @@ impl Input {
                     lit: Lit::Str(s), ..
                 }) => {
                     if hack_src.is_some() {
-                        return Err(Error::new(s.span(), "Unepected string"));
+                        return Err(Error::new(s.span(), "Unexpected string"));
                     }
                     hack_src = Some(s);
                 }
