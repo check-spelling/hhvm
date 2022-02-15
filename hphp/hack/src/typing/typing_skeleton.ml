@@ -124,12 +124,12 @@ let is_awaitable (ty : decl_ty) : bool =
 let params_source (arity : decl_ty fun_arity) (params : decl_ty fun_params) :
     string =
   let explicit_params = List.map params ~f:(param_source ~variadic:false) in
-  let varaidic_params =
+  let variadic_params =
     match arity with
     | Fstandard -> []
     | Fvariadic ty -> [param_source ty ~variadic:true]
   in
-  String.concat ~sep:", " (explicit_params @ varaidic_params)
+  String.concat ~sep:", " (explicit_params @ variadic_params)
 
 let of_method (name : string) (meth : class_elt) : string =
   let (_, ty_) = deref (Lazy.force meth.ce_type) in
