@@ -37,7 +37,7 @@ let check_fulfillment env class_pos get_impl (trait_pos, req_ty) =
            ~req_pos
            req_name))
 
-(** Check whether a class satifies all the requirements of the traits it uses,
+(** Check whether a class satisfies all the requirements of the traits it uses,
     namely [require extends] and [require implements]. *)
 let check_class env class_pos tc =
   match Cls.kind tc with
