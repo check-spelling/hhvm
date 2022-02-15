@@ -1504,7 +1504,7 @@ where
                 }
             }
             SyntaxList(ts) => Ok(E_::String2(Self::p_string2(ts, env)?)),
-            _ => Self::missing_syntax("literal expressoin", expr, env),
+            _ => Self::missing_syntax("literal expression", expr, env),
         }
     }
 
