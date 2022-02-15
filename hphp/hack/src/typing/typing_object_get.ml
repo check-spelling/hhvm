@@ -163,7 +163,7 @@ let widen_class_for_obj_get ~is_method ~nullsafe member_name env ty =
   | _ -> (env, None)
 
 (* `ty` is expected to be the type for a property or method that has been
- * accessed using the nullsafe operatore e.g. $x?->prop or $x?->foo(...).
+ * accessed using the nullsafe operator e.g. $x?->prop or $x?->foo(...).
  *
  * For properties, just make the type nullable.
  * For methods, we expect a function type, and make the return type nullable.
