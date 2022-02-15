@@ -247,7 +247,7 @@ let widen_class_for_obj_get ~is_method ~nullsafe member_name env ty =
       (env, None)
   | (r2, Tclass (((_, class_name) as class_id), _, tyl)) ->
     let default () =
-      let ty = mk (r2, Tclass (class_id, Nonexact, tyl)) in
+      let ty = mk (r2, Tclass (class_id, Inexact, tyl)) in
       (env, Some ty)
     in
     begin
