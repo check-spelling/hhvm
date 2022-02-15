@@ -1377,7 +1377,7 @@ fn p_expr_lit<'a>(
             }
         }
         SyntaxList(ts) => Ok(Expr_::String2(p_string2(ts, env)?)),
-        _ => missing_syntax("literal expressoin", expr, env),
+        _ => missing_syntax("literal expression", expr, env),
     }
 }
 
