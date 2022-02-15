@@ -42,7 +42,7 @@ SSATmp* canonical(SSATmp* value) {
       // ConvPtrToLval is special in that its not a passthrough instruction
       // (because the dest has a type incompatible with the source and might not
       // be a nop), but we still want to peer through it in order to find the
-      // value's utimate origin.
+      // value's ultimate origin.
       value = inst->src(0);
     } else {
       break;
