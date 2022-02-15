@@ -4473,7 +4473,7 @@ fn emit_class_const<'a, 'arena, 'decl>(
             } else {
                 e.add_class_ref(cid.clone());
                 // TODO(hrust) enabel `let const_id = hhbc::ConstName::from_ast_name(&id.1);`,
-                // `from_ast_name` should be able to accpet Cow<str>
+                // `from_ast_name` should be able to accept Cow<str>
                 let const_id =
                     hhbc::ConstName::new(Str::new_str(alloc, string_utils::strip_global_ns(&id.1)));
                 emit_pos_then(&pos, instr::cls_cns_d(const_id, cid))
@@ -4488,7 +4488,7 @@ fn emit_class_const<'a, 'arena, 'decl>(
                 }
             } else {
                 // TODO(hrust) enable `let const_id = hhbc::ConstName::from_ast_name(&id.1);`,
-                // `from_ast_name` should be able to accpet Cow<str>
+                // `from_ast_name` should be able to accept Cow<str>
                 let const_id =
                     hhbc::ConstName::new(Str::new_str(alloc, string_utils::strip_global_ns(&id.1)));
                 instr::cls_cns(const_id)
