@@ -1274,7 +1274,7 @@ BACKQUOTE_CHARS     ("{"*([^$`\\{]|("\\"{ANY_CHAR}))|{BACKQUOTE_LITERAL_DOLLAR})
             if (!IS_LABEL_START(YYCURSOR[-1])) continue;
 
             // Adjust cursor to the start of the potential label.
-            // If a label is recgonized, we want the cursor pointing at it.
+            // If a label is recognized, we want the cursor pointing at it.
             --YYCURSOR;
 
             if ((docLabelLen + 2) > (YYLIMIT - YYCURSOR)) {
