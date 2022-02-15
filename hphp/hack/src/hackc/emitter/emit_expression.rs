@@ -4807,7 +4807,7 @@ fn emit_class_const<'a, 'arena, 'decl>(
             } else {
                 emit_symbol_refs::add_class(e, cid.clone());
                 // TODO(hrust) enabel `let const_id = r#const::ConstType::from_ast_name(&id.1);`,
-                // `from_ast_name` should be able to accpet Cow<str>
+                // `from_ast_name` should be able to accept Cow<str>
                 let const_id =
                     r#const::ConstType(Str::new_str(alloc, string_utils::strip_global_ns(&id.1)));
                 emit_pos_then(alloc, &pos, instr::clscnsd(alloc, const_id, cid))
@@ -4822,7 +4822,7 @@ fn emit_class_const<'a, 'arena, 'decl>(
                 }
             } else {
                 // TODO(hrust) enabel `let const_id = r#const::ConstType::from_ast_name(&id.1);`,
-                // `from_ast_name` should be able to accpet Cow<str>
+                // `from_ast_name` should be able to accept Cow<str>
                 let const_id =
                     r#const::ConstType(Str::new_str(alloc, string_utils::strip_global_ns(&id.1)));
                 instr::clscns(alloc, const_id)
