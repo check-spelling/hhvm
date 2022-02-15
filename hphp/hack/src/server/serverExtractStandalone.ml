@@ -2307,7 +2307,7 @@ end = struct
   let pp ~is_multifile = Fmt.of_to_string (to_string ~is_multifile)
 end
 
-(* -- All releveant dependencies organized by file -------------------------- *)
+(* -- All relevant dependencies organized by file -------------------------- *)
 module Standalone : sig
   type t
 
