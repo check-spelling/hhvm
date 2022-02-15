@@ -1104,7 +1104,7 @@ module Primary = struct
       let claim =
         ( pos,
           Printf.sprintf
-            "Mising required field %s in %s"
+            "Missing required field %s in %s"
             (Markdown_lite.md_codify field_name)
             (Render.strip_ns record_name |> Markdown_lite.md_codify) )
       and reasons = [(decl_pos, "Field definition is here")] in
