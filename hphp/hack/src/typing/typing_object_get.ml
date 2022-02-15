@@ -1004,7 +1004,7 @@ and nullable_obj_get
       dflt_rval_err )
 
 (* Helper method for obj_get that decomposes the type ty1.
- * The additional parameter this_ty represents the type that will be substitued
+ * The additional parameter this_ty represents the type that will be substituted
  * for `this` in the method signature.
  *
  * If ty1 is an intersection type, we distribute the member access through the
