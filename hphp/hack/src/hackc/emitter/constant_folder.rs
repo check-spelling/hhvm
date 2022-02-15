@@ -932,7 +932,7 @@ pub fn cast_to_bool(x: TypedValue<'_>) -> bool {
 pub fn cast_to_int(x: TypedValue<'_>) -> Option<i64> {
     match x {
         TypedValue::Uninit => None, // Should not happen
-        // Unreachable - the only calliste of to_int is cast_to_arraykey, which never
+        // Unreachable - the only callsite of to_int is cast_to_arraykey, which never
         // calls it with String
         TypedValue::String(_) => None,    // not worth it
         TypedValue::LazyClass(_) => None, // not worth it
