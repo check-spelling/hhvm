@@ -364,7 +364,7 @@ impl SyntaxKind {
             SyntaxKind::NullableTypeSpecifier             => "nullable_type_specifier",
             SyntaxKind::LikeTypeSpecifier                 => "like_type_specifier",
             SyntaxKind::SoftTypeSpecifier                 => "soft_type_specifier",
-            SyntaxKind::AttributizedSpecifier             => "attributized_specifier",
+            SyntaxKind::AttributizedSpecifier             => "attributed_specifier",
             SyntaxKind::ReifiedTypeArgument               => "reified_type_argument",
             SyntaxKind::TypeArguments                     => "type_arguments",
             SyntaxKind::TypeParameters                    => "type_parameters",

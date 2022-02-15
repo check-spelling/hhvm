@@ -551,8 +551,8 @@ where S: SmartConstructors<State = State>,
     fn make_soft_type_specifier(&mut self, arg0 : Self::R, arg1 : Self::R) -> Self::R {
         compose(SyntaxKind::SoftTypeSpecifier, self.s.make_soft_type_specifier(arg0.1, arg1.1))
     }
-    fn make_attributized_specifier(&mut self, arg0 : Self::R, arg1 : Self::R) -> Self::R {
-        compose(SyntaxKind::AttributizedSpecifier, self.s.make_attributized_specifier(arg0.1, arg1.1))
+    fn make_attributed_specifier(&mut self, arg0 : Self::R, arg1 : Self::R) -> Self::R {
+        compose(SyntaxKind::AttributizedSpecifier, self.s.make_attributed_specifier(arg0.1, arg1.1))
     }
     fn make_reified_type_argument(&mut self, arg0 : Self::R, arg1 : Self::R) -> Self::R {
         compose(SyntaxKind::ReifiedTypeArgument, self.s.make_reified_type_argument(arg0.1, arg1.1))

@@ -717,8 +717,8 @@ where
         Node(self.0.make_soft_type_specifier(at.0, type_.0), self.1.make_soft_type_specifier(at.1, type_.1))
     }
 
-    fn make_attributized_specifier(&mut self, attribute_spec: Self::R, type_: Self::R) -> Self::R {
-        Node(self.0.make_attributized_specifier(attribute_spec.0, type_.0), self.1.make_attributized_specifier(attribute_spec.1, type_.1))
+    fn make_attributed_specifier(&mut self, attribute_spec: Self::R, type_: Self::R) -> Self::R {
+        Node(self.0.make_attributed_specifier(attribute_spec.0, type_.0), self.1.make_attributed_specifier(attribute_spec.1, type_.1))
     }
 
     fn make_reified_type_argument(&mut self, reified: Self::R, type_: Self::R) -> Self::R {

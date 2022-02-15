@@ -702,8 +702,8 @@ impl<'src, 'text, S: SourceTextAllocator<'text, 'src>> SmartConstructors for Dir
         <Self as FlattenSmartConstructors<'src, Self>>::make_soft_type_specifier(self, at, type_)
     }
 
-    fn make_attributized_specifier(&mut self, attribute_spec: Self::R, type_: Self::R) -> Self::R {
-        <Self as FlattenSmartConstructors<'src, Self>>::make_attributized_specifier(self, attribute_spec, type_)
+    fn make_attributed_specifier(&mut self, attribute_spec: Self::R, type_: Self::R) -> Self::R {
+        <Self as FlattenSmartConstructors<'src, Self>>::make_attributed_specifier(self, attribute_spec, type_)
     }
 
     fn make_reified_type_argument(&mut self, reified: Self::R, type_: Self::R) -> Self::R {
