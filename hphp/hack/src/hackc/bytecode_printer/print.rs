@@ -1120,7 +1120,7 @@ fn print_instructions(
                 return Err(Error::fail("Cannot break/continue 1 level").into());
             }
             IComment(_) => {
-                // indetation = 0
+                // indentation = 0
                 newline(w)?;
                 print_instr(w, instr)?;
             }
