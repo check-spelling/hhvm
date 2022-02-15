@@ -119,7 +119,7 @@ and instantiate_ subst x =
     (* Now collect up all generic parameters that appear in the target of the substitution *)
     let target_generics = get_tparams_in_subst subst in
     (* For generic parameters in the function type, rename them "away" from the parameters
-     * that appear in the target of the substitituion, and extend the substitution with
+     * that appear in the target of the substitution, and extend the substitution with
      * the renaming.
      *
      * For example, consider
