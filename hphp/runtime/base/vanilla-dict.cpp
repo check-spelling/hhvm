@@ -115,7 +115,7 @@ ArrayData* VanillaDict::MakeReserveDict(uint32_t size) {
   auto const scale = computeScaleFromSize(size);
   auto const ad    = reqAlloc(scale);
 
-  // Intialize the hash table first, because the header is already in L1 cache,
+  // Initialize the hash table first, because the header is already in L1 cache,
   // but the hash table may not be.  So let's issue the cache request ASAP.
   ad->initHash(scale);
 
