@@ -2253,8 +2253,8 @@ where
         // SPEC
         // record-creation:
         //   record-name [ record-field-initializer-list ]
-        // record-field-initilizer-list:
-        //   record-field-initilizer
+        // record-field-initializer-list:
+        //   record-field-initializer
         //   record-field-initializer-list, record-field-initializer
         // record-field-initializer:
         //   field-name => expression
