@@ -162,7 +162,7 @@ pub struct State {
     pub exp_recursion_depth: usize,
 }
 
-const EXP_RECUSION_LIMIT: usize = 30_000;
+const EXP_RECURSION_LIMIT: usize = 30_000;
 
 #[derive(Debug, Clone)]
 pub struct Env<'a, TF> {
@@ -1522,7 +1522,7 @@ where
         env: &mut Env<'a, TF>,
         parent_pos: Option<Pos>,
     ) -> Result<ast::Expr_, Error> {
-        if *env.exp_recursion_depth() >= EXP_RECUSION_LIMIT {
+        if *env.exp_recursion_depth() >= EXP_RECURSION_LIMIT {
             Err(Error::Failwith("Expression recursion limit reached".into()))
         } else {
             *env.exp_recursion_depth() += 1;
