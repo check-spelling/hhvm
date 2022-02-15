@@ -926,8 +926,8 @@ void VanillaDict::AppendTombstoneInPlace(ArrayData* ad) {
 ArrayData* VanillaDict::SetIntMove(ArrayData* ad, int64_t k, TypedValue v) {
   assertx(v.m_type != KindOfUninit);
   assertx(ad->cowCheck() || ad->notCyclic(v));
-  auto const preped = as(ad)->prepareForInsert(ad->cowCheck());
-  auto const result = preped->update(k, v);
+  auto const prepped = as(ad)->prepareForInsert(ad->cowCheck());
+  auto const result = prepped->update(k, v);
   if (ad != result && ad->decReleaseCheck()) VanillaDict::Release(ad);
   return result;
 }
@@ -943,8 +943,8 @@ ArrayData* VanillaDict::SetIntInPlace(ArrayData* ad, int64_t k, TypedValue v) {
 ArrayData* VanillaDict::SetStrMoveSkipConflict(ArrayData* ad, StringData* k, TypedValue v) {
   assertx(v.m_type != KindOfUninit);
   assertx(ad->cowCheck() || ad->notCyclic(v));
-  auto const preped = as(ad)->prepareForInsert(ad->cowCheck());
-  auto const result = preped->updateSkipConflict(k, v);
+  auto const prepped = as(ad)->prepareForInsert(ad->cowCheck());
+  auto const result = prepped->updateSkipConflict(k, v);
   if (ad != result && ad->decReleaseCheck()) VanillaDict::Release(ad);
   return result;
 }
@@ -952,8 +952,8 @@ ArrayData* VanillaDict::SetStrMoveSkipConflict(ArrayData* ad, StringData* k, Typ
 ArrayData* VanillaDict::SetIntMoveSkipConflict(ArrayData* ad, int64_t k, TypedValue v) {
   assertx(v.m_type != KindOfUninit);
   assertx(ad->cowCheck() || ad->notCyclic(v));
-  auto const preped = as(ad)->prepareForInsert(ad->cowCheck());
-  auto const result = preped->updateSkipConflict(k, v);
+  auto const prepped = as(ad)->prepareForInsert(ad->cowCheck());
+  auto const result = prepped->updateSkipConflict(k, v);
   if (ad != result && ad->decReleaseCheck()) VanillaDict::Release(ad);
   return result;
 }
@@ -961,8 +961,8 @@ ArrayData* VanillaDict::SetIntMoveSkipConflict(ArrayData* ad, int64_t k, TypedVa
 ArrayData* VanillaDict::SetStrMove(ArrayData* ad, StringData* k, TypedValue v) {
   assertx(v.m_type != KindOfUninit);
   assertx(ad->cowCheck() || ad->notCyclic(v));
-  auto const preped = as(ad)->prepareForInsert(ad->cowCheck());
-  auto const result = preped->update(k, v);
+  auto const prepped = as(ad)->prepareForInsert(ad->cowCheck());
+  auto const result = prepped->update(k, v);
   if (ad != result && ad->decReleaseCheck()) VanillaDict::Release(ad);
   return result;
 }
