@@ -816,7 +816,7 @@ fn emit_string2<'a, 'arena, 'decl>(
 ) -> Result<InstrSeq<'arena>> {
     let alloc = env.arena; // Should this be emitter.alloc?
     if es.is_empty() {
-        Err(unrecoverable("String2 with zero araguments is impossible"))
+        Err(unrecoverable("String2 with zero arguments is impossible"))
     } else if es.len() == 1 {
         Ok(InstrSeq::gather(
             alloc,
