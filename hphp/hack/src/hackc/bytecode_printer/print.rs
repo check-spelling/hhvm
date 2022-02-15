@@ -3386,11 +3386,11 @@ fn print_extends(w: &mut dyn Write, base: Option<&str>) -> Result<()> {
 fn print_record_field(
     ctx: &Context<'_>,
     w: &mut dyn Write,
-    Field(name, type_info, intial_value): &Field<'_>,
+    Field(name, type_info, initial_value): &Field<'_>,
 ) -> Result<()> {
     ctx.newline(w)?;
     w.write_all(b".property ")?;
-    match intial_value {
+    match initial_value {
         Just(_) => w.write_all(b"[public] ")?,
         Nothing => w.write_all(b"[public sys_initial_val] ")?,
     }
@@ -3399,7 +3399,7 @@ fn print_record_field(
 
     ctx.block(w, |c, w| {
         c.newline(w)?;
-        match intial_value {
+        match initial_value {
             Nothing => w.write_all(b"uninit")?,
             Just(value) => triple_quotes(w, |w| print_adata(c, w, value))?,
         }
