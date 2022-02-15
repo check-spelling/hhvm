@@ -87,16 +87,16 @@ module ParentClassElt = struct
   type t = {
     class_elt: class_elt;
     parent: parent;  (** The parent this class element is from. *)
-    errors_if_not_overriden: Typing_error.t Lazy.t list;
+    errors_if_not_overridden: Typing_error.t Lazy.t list;
         (** A list of errors to be added if that class element
             is not overridden in the class being checked. *)
   }
 
-  let make ?errors_if_not_overriden (class_elt, parent) =
+  let make ?errors_if_not_overridden (class_elt, parent) =
     {
       class_elt;
       parent;
-      errors_if_not_overriden = Option.value errors_if_not_overriden ~default:[];
+      errors_if_not_overridden = Option.value errors_if_not_overridden ~default:[];
     }
 
   (* Class elements with the same names and origins should be equal
@@ -1000,7 +1000,7 @@ let check_class_against_parent_class_elt
     {
       ParentClassElt.class_elt = parent_class_elt;
       parent = (parent_name_pos, parent_class);
-      errors_if_not_overriden;
+      errors_if_not_overridden;
     }
     env =
   match get_member member_kind class_ member_name with
@@ -1016,7 +1016,7 @@ let check_class_against_parent_class_elt
       check_abstract_member_in_concrete_class
         (class_pos, class_)
         (member_kind, member_name, class_elt);
-      errors_if_not_overriden
+      errors_if_not_overridden
       |> List.iter ~f:(fun err -> err |> Lazy.force |> Errors.add_typing_error);
       env
     ) else
@@ -1678,7 +1678,7 @@ let check_trait_diamonds
         ({
            ParentClassElt.class_elt = prev_class_elt;
            parent = (_, prev_parent);
-           errors_if_not_overriden = err;
+           errors_if_not_overridden = err;
          } as prev_parent_class_elt) ->
       if
         MemberKind.is_method member_kind
@@ -1708,7 +1708,7 @@ let check_trait_diamonds
         let parent_class_elt =
           ParentClassElt.make
             parent_class_elt
-            ~errors_if_not_overriden:
+            ~errors_if_not_overridden:
               (lazy
                  (Trait_reuse_check.method_import_via_diamond_error
                     env
