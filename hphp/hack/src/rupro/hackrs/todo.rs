@@ -25,7 +25,7 @@ pub enum RuproTodo {
     Coeffects,
     /// Fake members and refinements are not yet implemented.
     FakeMembersAndRefinement,
-    /// Awaitable/Async is not yet impelemented.
+    /// Awaitable/Async is not yet implemented.
     AwaitableAsync,
     /// Using variables are not yet implemented.
     UsingVar,
