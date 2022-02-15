@@ -35,7 +35,7 @@ use unique_list::UniqueList;
 type Scope<'a, 'arena> = AstScope<'a, 'arena>;
 type ScopeItem<'a, 'arena> = AstScopeItem<'a, 'arena>;
 
-#[derive(Debug, Clone)] // TODO(hrust): Clone is used when bactracking now, can we somehow avoid it?
+#[derive(Debug, Clone)] // TODO(hrust): Clone is used when backtracking now, can we somehow avoid it?
 struct Variables {
     /// all variables declared/used in the scope
     all_vars: HashSet<String>,
