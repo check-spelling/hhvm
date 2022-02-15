@@ -328,7 +328,7 @@ and localize_targ_by_kind (env, ety_env) ty (nkind : KindDefs.Simple.named_kind)
           env
       in
       let env =
-        match KindDefs.Simple.get_wilcard_bounds kind with
+        match KindDefs.Simple.get_wildcard_bounds kind with
         | KindDefs.Simple.NonLocalized decl_cstrs ->
           List.fold_left decl_cstrs ~init:env ~f:(fun env (ck, ty) ->
               let (env, ty) = localize ~ety_env env ty in
