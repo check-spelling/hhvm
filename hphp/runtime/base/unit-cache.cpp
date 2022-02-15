@@ -1936,7 +1936,7 @@ private:
     // Nothing is expired. We're done.
     if (expired.empty()) return;
 
-    // As mentioed above, we might have visited an entry more than
+    // As mentioned above, we might have visited an entry more than
     // once. Remove any duplicates.
     std::sort(
       expired.begin(), expired.end(),
