@@ -553,7 +553,7 @@ let main (args : client_check_env) (local_config : ServerLocalConfig.t) :
             "Invalid argument; expected an argument of the form [filename](:[any|typing|cast])? or [any|typing|cast]\n";
           raise Exit_status.(Exit_with Input_error)
         | exn ->
-          Printf.eprintf "An unexpected error occured: %s" (Exn.to_string exn);
+          Printf.eprintf "An unexpected error occurred: %s" (Exn.to_string exn);
           raise exn
       in
       let%lwt (ty, telemetry) =
