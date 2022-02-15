@@ -4893,7 +4893,7 @@ fn p_def<'a>(node: S<'a>, env: &mut Env<'a>) -> Result<Vec<ast::Def>, Error> {
                 typeconsts: vec![],
                 vars: vec![],
                 methods: vec![],
-                // TODO: what is this attbiute? check ast_to_aast
+                // TODO: what is this attribute? check ast_to_aast
                 attributes: vec![],
                 xhp_children: vec![],
                 xhp_attrs: vec![],
