@@ -1337,7 +1337,7 @@ void iopQueryM(
       break;
     }
     default:
-      FTRACE(1, "taint: (WARNING) unsuppoted query operation\n");
+      FTRACE(1, "taint: (WARNING) unsupported query operation\n");
       return;
   }
 }
