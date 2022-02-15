@@ -229,7 +229,7 @@ pub enum InstructLitConst<'arena> {
     Double(Str<'arena>),
     String(Str<'arena>),
     LazyClass(ClassId<'arena>),
-    /// Pseudo instruction that will get translated into appropraite literal
+    /// Pseudo instruction that will get translated into appropriate literal
     /// bytecode, with possible reference to .adata *)
     TypedValue(runtime::TypedValue<'arena>),
     Vec(AdataId<'arena>),
