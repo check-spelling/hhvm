@@ -562,7 +562,7 @@ BACKQUOTE_CHARS     ("{"*([^$`\\{]|("\\"{ANY_CHAR}))|{BACKQUOTE_LITERAL_DOLLAR})
   }
   yyless(1);
   if (_scanner->isHHSyntaxEnabled() && (ntt & NextTokenType::TypeListMaybe)) {
-    // Return T_UNRESOLVED_LT; the scanner will inspect subseqent tokens
+    // Return T_UNRESOLVED_LT; the scanner will inspect subsequent tokens
     // to resolve this.
     RETSTEP(T_UNRESOLVED_LT);
   }
@@ -573,7 +573,7 @@ BACKQUOTE_CHARS     ("{"*([^$`\\{]|("\\"{ANY_CHAR}))|{BACKQUOTE_LITERAL_DOLLAR})
   if (_scanner->isHHSyntaxEnabled()) {
     int ntt = getNextTokenType(_scanner->lastToken());
     if (ntt & NextTokenType::TypeListMaybe) {
-      // Return T_UNRESOLVED_LT; the scanner will inspect subseqent tokens
+      // Return T_UNRESOLVED_LT; the scanner will inspect subsequent tokens
       // to resolve this.
       RETSTEP(T_UNRESOLVED_LT);
     }
