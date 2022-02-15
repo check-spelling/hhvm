@@ -873,7 +873,7 @@ impl<'ast, 'a: 'b, 'b, 'arena: 'a> VisitorMut<'ast> for ClosureVisitor<'a, 'b, '
 
     fn visit_def(&mut self, scope: &mut Scope<'b, 'arena>, def: &mut Def) -> Result<()> {
         match def {
-            // need to handle it ourselvses, because visit_fun_ is
+            // need to handle it ourselves, because visit_fun_ is
             // called both for toplevel functions and lambdas
             Def::Fun(fd) => {
                 let variables =
