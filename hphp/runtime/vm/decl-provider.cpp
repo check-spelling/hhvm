@@ -23,7 +23,7 @@ namespace HPHP {
   // The prototypical, indicative stub code sketched out below doesn't
   // take into account the RDS nature of the AutoloadHandler data
   // structures and at this time, we can't rely on calls to `getDecl`
-  // not triggering assertions due to inapproriate usage (like being
+  // not triggering assertions due to inappropriate usage (like being
   // called on the wrong thread for example). See D31842297 for some
   // discussion.
 
