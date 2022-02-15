@@ -60,7 +60,7 @@ let update
     global_errors
     ~(* If incremental recheck was not full, only a subset of errors in
       * global_errors is guaranteed to be up to date. ServerTypeCheck keeps this
-      * subset to be union of priority_files and Diagnsotic_subscription.sources
+      * subset to be union of priority_files and Diagnostic_subscription.sources
       *)
     full_check_done =
   let { diagnosed_files; error_limit; _ } = ds in
