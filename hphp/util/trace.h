@@ -247,7 +247,7 @@ enum Module {
  * E.g.:
  *    (Location Stack 1)
  *
- * The repetitve prettyNode() templates are intended to aid
+ * The repetitive prettyNode() templates are intended to aid
  * implementing pretty().
  */
 
