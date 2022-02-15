@@ -1528,7 +1528,7 @@ pub mod instr {
         instr(alloc, Instruct::IGenerator(GenCreationExecution::ContValid))
     }
 
-    pub fn contcurrent<'a>(alloc: &'a bumpalo::Bump) -> InstrSeq<'a> {
+    pub fn concurrent<'a>(alloc: &'a bumpalo::Bump) -> InstrSeq<'a> {
         instr(
             alloc,
             Instruct::IGenerator(GenCreationExecution::ContCurrent),
