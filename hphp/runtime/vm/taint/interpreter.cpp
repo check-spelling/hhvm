@@ -1333,7 +1333,7 @@ void iopQueryM(uint32_t /* nDiscard */, QueryMOp op, MemberKey memberKey) {
       break;
     }
     default:
-      FTRACE(1, "taint: (WARNING) unsuppoted query operation\n");
+      FTRACE(1, "taint: (WARNING) unsupported query operation\n");
       return;
   }
 }
