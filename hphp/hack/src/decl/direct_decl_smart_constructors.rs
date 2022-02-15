@@ -5485,7 +5485,7 @@ impl<'a, 'text, S: SourceTextAllocator<'text, 'a>>
 
     // A type specifier preceded by an attribute list. At the time of writing,
     // only the <<__Soft>> attribute is permitted here.
-    fn make_attributized_specifier(&mut self, attributes: Self::R, hint: Self::R) -> Self::R {
+    fn make_attributed_specifier(&mut self, attributes: Self::R, hint: Self::R) -> Self::R {
         match attributes {
             Node::BracketedList((
                 ltlt_pos,

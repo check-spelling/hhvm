@@ -729,8 +729,8 @@ where
         <Self as SyntaxSmartConstructors<S, TF, State>>::make_soft_type_specifier(self, arg0, arg1)
     }
 
-    fn make_attributized_specifier(&mut self, arg0: Self::R, arg1: Self::R) -> Self::R {
-        <Self as SyntaxSmartConstructors<S, TF, State>>::make_attributized_specifier(self, arg0, arg1)
+    fn make_attributed_specifier(&mut self, arg0: Self::R, arg1: Self::R) -> Self::R {
+        <Self as SyntaxSmartConstructors<S, TF, State>>::make_attributed_specifier(self, arg0, arg1)
     }
 
     fn make_reified_type_argument(&mut self, arg0: Self::R, arg1: Self::R) -> Self::R {

@@ -1801,10 +1801,10 @@ where
         Self::make(syntax, value)
     }
 
-    fn make_attributized_specifier(_: &C, attributized_specifier_attribute_spec: Self, attributized_specifier_type: Self) -> Self {
+    fn make_attributed_specifier(_: &C, attributed_specifier_attribute_spec: Self, attributed_specifier_type: Self) -> Self {
         let syntax = SyntaxVariant::AttributizedSpecifier(Box::new(AttributizedSpecifierChildren {
-            attributized_specifier_attribute_spec,
-            attributized_specifier_type,
+            attributed_specifier_attribute_spec,
+            attributed_specifier_type,
         }));
         let value = V::from_values(syntax.iter_children().map(|child| &child.value));
         Self::make(syntax, value)
@@ -3208,9 +3208,9 @@ where
                 acc
             },
             SyntaxVariant::AttributizedSpecifier(x) => {
-                let AttributizedSpecifierChildren { attributized_specifier_attribute_spec, attributized_specifier_type } = *x;
-                let acc = f(attributized_specifier_attribute_spec, acc);
-                let acc = f(attributized_specifier_type, acc);
+                let AttributizedSpecifierChildren { attributed_specifier_attribute_spec, attributed_specifier_type } = *x;
+                let acc = f(attributed_specifier_attribute_spec, acc);
+                let acc = f(attributed_specifier_type, acc);
                 acc
             },
             SyntaxVariant::ReifiedTypeArgument(x) => {
@@ -4589,8 +4589,8 @@ where
                  
              })),
              (SyntaxKind::AttributizedSpecifier, 2) => SyntaxVariant::AttributizedSpecifier(Box::new(AttributizedSpecifierChildren {
-                 attributized_specifier_type: ts.pop().unwrap(),
-                 attributized_specifier_attribute_spec: ts.pop().unwrap(),
+                 attributed_specifier_type: ts.pop().unwrap(),
+                 attributed_specifier_attribute_spec: ts.pop().unwrap(),
                  
              })),
              (SyntaxKind::ReifiedTypeArgument, 2) => SyntaxVariant::ReifiedTypeArgument(Box::new(ReifiedTypeArgumentChildren {
@@ -5940,8 +5940,8 @@ pub struct SoftTypeSpecifierChildren<T, V> {
 
 #[derive(Debug, Clone)]
 pub struct AttributizedSpecifierChildren<T, V> {
-    pub attributized_specifier_attribute_spec: Syntax<T, V>,
-    pub attributized_specifier_type: Syntax<T, V>,
+    pub attributed_specifier_attribute_spec: Syntax<T, V>,
+    pub attributed_specifier_type: Syntax<T, V>,
 }
 
 #[derive(Debug, Clone)]
@@ -7819,8 +7819,8 @@ impl<'a, T, V> SyntaxChildrenIterator<'a, T, V> {
             },
             AttributizedSpecifier(x) => {
                 get_index(2).and_then(|index| { match index {
-                        0 => Some(&x.attributized_specifier_attribute_spec),
-                    1 => Some(&x.attributized_specifier_type),
+                        0 => Some(&x.attributed_specifier_attribute_spec),
+                    1 => Some(&x.attributed_specifier_type),
                         _ => None,
                     }
                 })

@@ -1347,7 +1347,7 @@ pub trait FlattenSmartConstructors<'src, State>
         }
     }
 
-    fn make_attributized_specifier(&mut self, arg0: Self::R, arg1: Self::R) -> Self::R {
+    fn make_attributed_specifier(&mut self, arg0: Self::R, arg1: Self::R) -> Self::R {
         if Self::is_zero(&arg0) && Self::is_zero(&arg1) {
           Self::zero(SyntaxKind::AttributizedSpecifier)
         } else {

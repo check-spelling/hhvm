@@ -1108,7 +1108,7 @@ where
         if !Self::can_term_take_type_args(term) {
             return None;
         }
-        if self.peek_token_kind_with_possible_attributized_type_list() != TokenKind::LessThan {
+        if self.peek_token_kind_with_possible_attributed_type_list() != TokenKind::LessThan {
             return None;
         }
         let mut parser1 = self.clone();
@@ -1183,7 +1183,7 @@ where
         // We need to override the precedence of the < operator in the case where it
         // is the start of a specified function call.
         let maybe_prefix =
-            if self.peek_token_kind_with_possible_attributized_type_list() == TokenKind::LessThan {
+            if self.peek_token_kind_with_possible_attributed_type_list() == TokenKind::LessThan {
                 match self.try_parse_specified_function_call(left_term) {
                     Some(r) => Some(BinaryExpressionPrefixKind::PrefixLessThan(r)),
                     None => None,
@@ -1503,7 +1503,7 @@ where
             let start_token = S!(make_token, self, start_token);
             self.scan_remaining_qualified_name(start_token)
         };
-        match self.peek_token_kind_with_possible_attributized_type_list() {
+        match self.peek_token_kind_with_possible_attributed_type_list() {
             TokenKind::LeftParen | TokenKind::LessThan => Some(name),
             _ => None,
         }
@@ -1531,7 +1531,7 @@ where
         let token = parser1.next_token();
         match token.kind() {
             TokenKind::Parent | TokenKind::SelfToken => {
-                match parser1.peek_token_kind_with_possible_attributized_type_list() {
+                match parser1.peek_token_kind_with_possible_attributed_type_list() {
                     TokenKind::LeftParen => {
                         self.continue_from(parser1);
                         S!(make_token, self, token)
@@ -2195,7 +2195,7 @@ where
     /// Parse a name, a collection literal like vec[1, 2] or an
     /// expression tree literal Code`1`;
     fn parse_name_or_collection_literal_expression(&mut self, name: S::R) -> S::R {
-        match self.peek_token_kind_with_possible_attributized_type_list() {
+        match self.peek_token_kind_with_possible_attributed_type_list() {
             TokenKind::LeftBrace => {
                 let name = S!(make_simple_type_specifier, self, name);
                 self.parse_collection_literal_expression(name)
@@ -2376,7 +2376,7 @@ where
     {
         let mut parser1 = self.clone();
         let keyword = parser1.assert_token(keyword_token);
-        let explicit_type = match parser1.peek_token_kind_with_possible_attributized_type_list() {
+        let explicit_type = match parser1.peek_token_kind_with_possible_attributed_type_list() {
             TokenKind::LessThan => {
                 let (type_arguments, _) = parser1.parse_generic_type_arguments();
                 // skip no_arg_is_missing check since there must only be 1 or 2 type arguments

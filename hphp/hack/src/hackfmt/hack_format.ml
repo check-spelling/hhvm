@@ -957,8 +957,8 @@ let rec t (env : Env.t) (node : Syntax.t) : Doc.t =
       Concat [t env at; t env attr]
     | Syntax.AttributizedSpecifier
         {
-          attributized_specifier_attribute_spec = attr_spec;
-          attributized_specifier_type = attr_type;
+          attributed_specifier_attribute_spec = attr_spec;
+          attributed_specifier_type = attr_type;
         } ->
       Concat
         [

@@ -182,7 +182,7 @@ pub trait SyntaxType<C>: SyntaxTypeBase<C>
     fn make_nullable_type_specifier(ctx: &C, nullable_question: Self, nullable_type: Self) -> Self;
     fn make_like_type_specifier(ctx: &C, like_tilde: Self, like_type: Self) -> Self;
     fn make_soft_type_specifier(ctx: &C, soft_at: Self, soft_type: Self) -> Self;
-    fn make_attributized_specifier(ctx: &C, attributized_specifier_attribute_spec: Self, attributized_specifier_type: Self) -> Self;
+    fn make_attributed_specifier(ctx: &C, attributed_specifier_attribute_spec: Self, attributed_specifier_type: Self) -> Self;
     fn make_reified_type_argument(ctx: &C, reified_type_argument_reified: Self, reified_type_argument_type: Self) -> Self;
     fn make_type_arguments(ctx: &C, type_arguments_left_angle: Self, type_arguments_types: Self, type_arguments_right_angle: Self) -> Self;
     fn make_type_parameters(ctx: &C, type_parameters_left_angle: Self, type_parameters_parameters: Self, type_parameters_right_angle: Self) -> Self;

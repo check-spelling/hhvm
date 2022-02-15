@@ -2201,7 +2201,7 @@ module Make (Token : TokenType) (SyntaxValue : SyntaxValueType) = struct
           function_where_clause =
             validate_option_with validate_where_clause x.function_where_clause;
           function_type =
-            validate_option_with validate_attributized_specifier x.function_type;
+            validate_option_with validate_attributed_specifier x.function_type;
           function_readonly_return =
             validate_option_with validate_token x.function_readonly_return;
           function_colon = validate_option_with validate_token x.function_colon;
@@ -2251,7 +2251,7 @@ module Make (Token : TokenType) (SyntaxValue : SyntaxValueType) = struct
               invalidate_option_with invalidate_token x.function_readonly_return;
             function_type =
               invalidate_option_with
-                invalidate_attributized_specifier
+                invalidate_attributed_specifier
                 x.function_type;
             function_where_clause =
               invalidate_option_with
@@ -6421,32 +6421,32 @@ module Make (Token : TokenType) (SyntaxValue : SyntaxValueType) = struct
       Syntax.value = v;
     }
 
-  and validate_attributized_specifier : attributized_specifier validator =
+  and validate_attributed_specifier : attributed_specifier validator =
     function
     | { Syntax.syntax = Syntax.AttributizedSpecifier x; value = v } ->
       ( v,
         {
-          attributized_specifier_type =
-            validate_specifier x.attributized_specifier_type;
-          attributized_specifier_attribute_spec =
+          attributed_specifier_type =
+            validate_specifier x.attributed_specifier_type;
+          attributed_specifier_attribute_spec =
             validate_option_with
               validate_attribute_specification
-              x.attributized_specifier_attribute_spec;
+              x.attributed_specifier_attribute_spec;
         } )
     | s -> validation_fail (Some SyntaxKind.AttributizedSpecifier) s
 
-  and invalidate_attributized_specifier : attributized_specifier invalidator =
+  and invalidate_attributed_specifier : attributed_specifier invalidator =
    fun (v, x) ->
     {
       Syntax.syntax =
         Syntax.AttributizedSpecifier
           {
-            attributized_specifier_attribute_spec =
+            attributed_specifier_attribute_spec =
               invalidate_option_with
                 invalidate_attribute_specification
-                x.attributized_specifier_attribute_spec;
-            attributized_specifier_type =
-              invalidate_specifier x.attributized_specifier_type;
+                x.attributed_specifier_attribute_spec;
+            attributed_specifier_type =
+              invalidate_specifier x.attributed_specifier_type;
           };
       Syntax.value = v;
     }
@@ -6485,7 +6485,7 @@ module Make (Token : TokenType) (SyntaxValue : SyntaxValueType) = struct
             validate_token x.type_arguments_right_angle;
           type_arguments_types =
             validate_list_with
-              validate_attributized_specifier
+              validate_attributed_specifier
               x.type_arguments_types;
           type_arguments_left_angle = validate_token x.type_arguments_left_angle;
         } )
@@ -6501,7 +6501,7 @@ module Make (Token : TokenType) (SyntaxValue : SyntaxValueType) = struct
               invalidate_token x.type_arguments_left_angle;
             type_arguments_types =
               invalidate_list_with
-                invalidate_attributized_specifier
+                invalidate_attributed_specifier
                 x.type_arguments_types;
             type_arguments_right_angle =
               invalidate_token x.type_arguments_right_angle;

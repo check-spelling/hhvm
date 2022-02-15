@@ -1497,9 +1497,9 @@ ss.serialize_field("soft_type", &self.with(type_))?;
 } 
 SyntaxVariant::AttributizedSpecifier (AttributizedSpecifierChildren{attribute_spec,type_} ) => {
       let mut ss = s.serialize_struct("", 3)?;
-      ss.serialize_field("kind", "attributized_specifier")?;
-      ss.serialize_field("attributized_specifier_attribute_spec", &self.with(attribute_spec))?;
-ss.serialize_field("attributized_specifier_type", &self.with(type_))?;
+      ss.serialize_field("kind", "attributed_specifier")?;
+      ss.serialize_field("attributed_specifier_attribute_spec", &self.with(attribute_spec))?;
+ss.serialize_field("attributed_specifier_type", &self.with(type_))?;
       ss.end()
 } 
 SyntaxVariant::ReifiedTypeArgument (ReifiedTypeArgumentChildren{reified,type_} ) => {

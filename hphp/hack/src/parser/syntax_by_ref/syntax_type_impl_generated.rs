@@ -1807,7 +1807,7 @@ where
         Self::make(syntax, value)
     }
 
-    fn make_attributized_specifier(ctx: &C, attribute_spec: Self, type_: Self) -> Self {
+    fn make_attributed_specifier(ctx: &C, attribute_spec: Self, type_: Self) -> Self {
         let syntax = SyntaxVariant::AttributizedSpecifier(ctx.get_arena().alloc(AttributizedSpecifierChildren {
             attribute_spec,
             type_,

@@ -271,7 +271,7 @@ where
 
     // Type parameter/argument lists begin with < and can have attributes immediately
     // afterwards, so this peeks a token kind at the beginning of such a list. *)
-    fn peek_token_kind_with_possible_attributized_type_list(&self) -> TokenKind {
+    fn peek_token_kind_with_possible_attributed_type_list(&self) -> TokenKind {
         if self.peek_next_partial_token_is_triple_left_angle() {
             TokenKind::LessThan
         } else {

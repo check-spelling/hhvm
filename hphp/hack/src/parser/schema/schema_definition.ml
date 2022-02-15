@@ -2302,10 +2302,10 @@ let schema : schema_node list =
     };
     {
       kind_name = "AttributizedSpecifier";
-      type_name = "attributized_specifier";
-      func_name = "attributized_specifier";
-      description = "attributized_specifier";
-      prefix = "attributized_specifier";
+      type_name = "attributed_specifier";
+      func_name = "attributed_specifier";
+      description = "attributed_specifier";
+      prefix = "attributed_specifier";
       aggregates = [];
       fields =
         [
