@@ -9,7 +9,7 @@ use im::HashSet;
 
 #[derive(Debug, Clone, PartialEq, Eq, Hash, Default)]
 pub struct KindFlags {
-    enforcable: bool,
+    enforceable: bool,
     newable: bool,
     require_dynamic: bool,
 }
