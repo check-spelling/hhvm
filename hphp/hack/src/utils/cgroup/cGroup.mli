@@ -17,7 +17,7 @@ type stats = {
       (** The amount of physical anonymous memory being used as shared memory *)
   file: int;  (** The amount of physical memory which is not anonymous *)
   cgroup_name: string;
-      (** the cgroup we queried, obtained dyanmically based on our pid *)
+      (** the cgroup we queried, obtained dynamically based on our pid *)
 }
 
 (** Reads the current PID, figures out which cgroup it's in (if cgroups are available),
