@@ -587,7 +587,7 @@ impl<'a> ToOxidized<'a> for BReason {
     }
 }
 
-/// A stateless sentinal Reason.
+/// A stateless sentinel Reason.
 #[derive(Debug, Clone, PartialEq, Eq, EqModuloPos, Hash, Serialize, Deserialize)]
 pub struct NReason;
 
