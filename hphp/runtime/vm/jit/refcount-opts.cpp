@@ -3442,7 +3442,7 @@ void optimizeDecRefForProfiledType(
 
 /*
  * This optimization selectively transforms DecRefs into DecRefNZs, which is
- * valid when destructors are disallowed.  This tranformation avoids checking if
+ * valid when destructors are disallowed.  This transformation avoids checking if
  * the count got to zero and immediately releasing the object. This will use
  * more memory, but it is still OK to do because the tracing GC can later
  * collect the garbage produced.  This transformation can also trigger more
