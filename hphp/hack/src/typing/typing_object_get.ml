@@ -1009,13 +1009,13 @@ and obj_get_inner
           let (env, ty) = Typing_union.union_list env Reason.none tys in
           (env, Ok ty))
         ~error:(fun (actuals, expecteds) ->
-          let (env, ty_acutal) =
+          let (env, ty_actual) =
             Typing_union.union_list env Reason.none actuals
           in
           let (env, ty_expect) =
             Typing_union.union_list env Reason.none expecteds
           in
-          (env, Error (ty_acutal, ty_expect)))
+          (env, Error (ty_actual, ty_expect)))
     in
     let (env, lval_err) = mk_err env @@ fold_errs lval_errs in
     let (env, rval_err) =
