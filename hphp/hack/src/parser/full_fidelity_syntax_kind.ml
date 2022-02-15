@@ -357,7 +357,7 @@ let to_string kind =
   | NullableTypeSpecifier -> "nullable_type_specifier"
   | LikeTypeSpecifier -> "like_type_specifier"
   | SoftTypeSpecifier -> "soft_type_specifier"
-  | AttributizedSpecifier -> "attributized_specifier"
+  | AttributizedSpecifier -> "attributed_specifier"
   | ReifiedTypeArgument -> "reified_type_argument"
   | TypeArguments -> "type_arguments"
   | TypeParameters -> "type_parameters"

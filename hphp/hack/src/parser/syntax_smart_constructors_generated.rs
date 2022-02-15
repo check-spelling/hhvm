@@ -845,9 +845,9 @@ where
         Self::R::make_soft_type_specifier(self.state_mut(), arg0, arg1)
     }
 
-    fn make_attributized_specifier(&mut self, arg0 : Self::R, arg1 : Self::R) -> Self::R {
+    fn make_attributed_specifier(&mut self, arg0 : Self::R, arg1 : Self::R) -> Self::R {
         self.state_mut().next(&[&arg0, &arg1]);
-        Self::R::make_attributized_specifier(self.state_mut(), arg0, arg1)
+        Self::R::make_attributed_specifier(self.state_mut(), arg0, arg1)
     }
 
     fn make_reified_type_argument(&mut self, arg0 : Self::R, arg1 : Self::R) -> Self::R {

@@ -964,8 +964,8 @@ module type Syntax_S = sig
         soft_type: t;
       }
     | AttributizedSpecifier of {
-        attributized_specifier_attribute_spec: t;
-        attributized_specifier_type: t;
+        attributed_specifier_attribute_spec: t;
+        attributed_specifier_type: t;
       }
     | ReifiedTypeArgument of {
         reified_type_argument_reified: t;
@@ -1400,7 +1400,7 @@ module type Syntax_S = sig
 
   val make_soft_type_specifier : t -> t -> t
 
-  val make_attributized_specifier : t -> t -> t
+  val make_attributed_specifier : t -> t -> t
 
   val make_reified_type_argument : t -> t -> t
 
@@ -1748,7 +1748,7 @@ module type Syntax_S = sig
 
   val is_soft_type_specifier : t -> bool
 
-  val is_attributized_specifier : t -> bool
+  val is_attributed_specifier : t -> bool
 
   val is_reified_type_argument : t -> bool
 

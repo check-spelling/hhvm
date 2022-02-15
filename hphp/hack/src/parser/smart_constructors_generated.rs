@@ -198,7 +198,7 @@ pub trait SmartConstructors: Clone {
     fn make_nullable_type_specifier(&mut self, arg0 : Self::R, arg1 : Self::R) -> Self::R;
     fn make_like_type_specifier(&mut self, arg0 : Self::R, arg1 : Self::R) -> Self::R;
     fn make_soft_type_specifier(&mut self, arg0 : Self::R, arg1 : Self::R) -> Self::R;
-    fn make_attributized_specifier(&mut self, arg0 : Self::R, arg1 : Self::R) -> Self::R;
+    fn make_attributed_specifier(&mut self, arg0 : Self::R, arg1 : Self::R) -> Self::R;
     fn make_reified_type_argument(&mut self, arg0 : Self::R, arg1 : Self::R) -> Self::R;
     fn make_type_arguments(&mut self, arg0 : Self::R, arg1 : Self::R, arg2 : Self::R) -> Self::R;
     fn make_type_parameters(&mut self, arg0 : Self::R, arg1 : Self::R, arg2 : Self::R) -> Self::R;

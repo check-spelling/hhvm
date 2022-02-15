@@ -1094,8 +1094,8 @@ struct
         soft_type: t;
       }
     | AttributizedSpecifier of {
-        attributized_specifier_attribute_spec: t;
-        attributized_specifier_type: t;
+        attributed_specifier_attribute_spec: t;
+        attributed_specifier_type: t;
       }
     | ReifiedTypeArgument of {
         reified_type_argument_reified: t;
@@ -1607,7 +1607,7 @@ struct
     function_contexts: contexts option value;
     function_colon: Token.t option value;
     function_readonly_return: Token.t option value;
-    function_type: attributized_specifier option value;
+    function_type: attributed_specifier option value;
     function_where_clause: where_clause option value;
   }
 
@@ -2518,9 +2518,9 @@ struct
     soft_type: specifier value;
   }
 
-  and attributized_specifier = {
-    attributized_specifier_attribute_spec: attribute_specification option value;
-    attributized_specifier_type: specifier value;
+  and attributed_specifier = {
+    attributed_specifier_attribute_spec: attribute_specification option value;
+    attributed_specifier_type: specifier value;
   }
 
   and reified_type_argument = {
@@ -2530,7 +2530,7 @@ struct
 
   and type_arguments = {
     type_arguments_left_angle: Token.t value;
-    type_arguments_types: attributized_specifier listesque value;
+    type_arguments_types: attributed_specifier listesque value;
     type_arguments_right_angle: Token.t value;
   }
 

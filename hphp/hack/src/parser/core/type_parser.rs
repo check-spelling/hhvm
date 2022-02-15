@@ -223,8 +223,8 @@ where
             | TokenKind::Question => self.parse_nullable_type_specifier(),
             | TokenKind::Tilde => self.parse_like_type_specifier(),
             | TokenKind::At if !new_attr_syntax => self.parse_soft_type_specifier(),
-            | TokenKind::At if new_attr_syntax => self.parse_attributized_specifier(),
-            | TokenKind::LessThanLessThan if allow_attr => self.parse_attributized_specifier(),
+            | TokenKind::At if new_attr_syntax => self.parse_attributed_specifier(),
+            | TokenKind::LessThanLessThan if allow_attr => self.parse_attributed_specifier(),
             | TokenKind::Classname => self.parse_classname_type_specifier(),
             | _ => {
                 S!(make_missing, self, self.pos())
@@ -319,14 +319,14 @@ where
     }
 
     fn parse_remaining_simple_type_or_type_constant_or_generic(&mut self, name: S::R) -> S::R {
-        match self.peek_token_kind_with_possible_attributized_type_list() {
+        match self.peek_token_kind_with_possible_attributed_type_list() {
             TokenKind::LessThan => self.parse_remaining_generic(name),
             _ => self.parse_remaining_simple_type_or_type_constant(name),
         }
     }
 
     fn parse_remaining_simple_type_or_generic(&mut self, name: S::R) -> S::R {
-        match self.peek_token_kind_with_possible_attributized_type_list() {
+        match self.peek_token_kind_with_possible_attributed_type_list() {
             TokenKind::LessThan => self.parse_remaining_generic(name),
             _ => S!(make_simple_type_specifier, self, name),
         }
@@ -404,7 +404,7 @@ where
     }
 
     pub fn parse_generic_type_parameter_list_opt(&mut self) -> S::R {
-        match self.peek_token_kind_with_possible_attributized_type_list() {
+        match self.peek_token_kind_with_possible_attributed_type_list() {
             TokenKind::LessThan => self.parse_generic_type_parameter_list(),
             _ => S!(make_missing, self, self.pos()),
         }
@@ -603,7 +603,7 @@ where
     fn parse_darray_type_specifier(&mut self) -> S::R {
         // darray<type, type>
         let array_token = self.assert_token(TokenKind::Darray);
-        if self.peek_token_kind_with_possible_attributized_type_list() != TokenKind::LessThan {
+        if self.peek_token_kind_with_possible_attributed_type_list() != TokenKind::LessThan {
             S!(make_simple_type_specifier, self, array_token)
         } else {
             let left_angle = self.assert_left_angle_in_type_list_with_possible_attribute();
@@ -629,7 +629,7 @@ where
     fn parse_varray_type_specifier(&mut self) -> S::R {
         // varray<type>
         let array_token = self.assert_token(TokenKind::Varray);
-        if self.peek_token_kind_with_possible_attributized_type_list() != TokenKind::LessThan {
+        if self.peek_token_kind_with_possible_attributed_type_list() != TokenKind::LessThan {
             S!(make_simple_type_specifier, self, array_token)
         } else {
             let left_angle = self.assert_left_angle_in_type_list_with_possible_attribute();
@@ -656,7 +656,7 @@ where
         // this a simple type.  TODO: Should this be an error at parse time? what
         // about at type checking time?
         let keyword = self.assert_token(TokenKind::Vec);
-        if self.peek_token_kind_with_possible_attributized_type_list() != TokenKind::LessThan {
+        if self.peek_token_kind_with_possible_attributed_type_list() != TokenKind::LessThan {
             S!(make_simple_type_specifier, self, keyword)
         } else {
             let left = self.assert_left_angle_in_type_list_with_possible_attribute();
@@ -683,7 +683,7 @@ where
         // this a simple type.  TODO: Should this be an error at parse time? what
         // about at type checking time?
         let keyword = self.assert_token(TokenKind::Keyset);
-        if self.peek_token_kind_with_possible_attributized_type_list() != TokenKind::LessThan {
+        if self.peek_token_kind_with_possible_attributed_type_list() != TokenKind::LessThan {
             S!(make_simple_type_specifier, self, keyword)
         } else {
             let left = self.assert_left_angle_in_type_list_with_possible_attribute();
@@ -756,7 +756,7 @@ where
         // a simple type.  TODO: Should this be an error at parse time?  what
         // about at type checking time?
         let keyword = self.assert_token(TokenKind::Dict);
-        if self.peek_token_kind_with_possible_attributized_type_list() != TokenKind::LessThan {
+        if self.peek_token_kind_with_possible_attributed_type_list() != TokenKind::LessThan {
             S!(make_simple_type_specifier, self, keyword)
         } else {
             // TODO: This allows "noreturn" as a type argument. Should we
@@ -970,19 +970,19 @@ where
         S!(make_soft_type_specifier, self, soft_at, soft_type)
     }
 
-    fn parse_attributized_specifier(&mut self) -> S::R {
+    fn parse_attributed_specifier(&mut self) -> S::R {
         // SPEC
-        // attributized-specifier:
+        // attributed-specifier:
         // attribute-specification-opt type-specifier
         let attribute_spec_opt = self.with_decl_parser(|x: &mut DeclarationParser<'a, S>| {
             x.parse_attribute_specification_opt()
         });
-        let attributized_type = self.parse_type_specifier(false, true);
+        let attributed_type = self.parse_type_specifier(false, true);
         S!(
-            make_attributized_specifier,
+            make_attributed_specifier,
             self,
             attribute_spec_opt,
-            attributized_type
+            attributed_type
         )
     }
 
