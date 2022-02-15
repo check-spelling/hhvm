@@ -86,7 +86,7 @@ fn localize_class_instantiation<R: Reason>(
             rupro_todo_assert!(class_info.get_enum_type().is_none(), AST);
             rupro_todo_assert!(class_info.get_tparams().is_empty(), AST);
             rupro_todo_assert!(ty_args.is_empty(), AST);
-            local::Ty::new(r, Tclass(sid, Exact::Nonexact, vec![]))
+            local::Ty::new(r, Tclass(sid, Exact::Inexact, vec![]))
         }
     };
     Ok(res)

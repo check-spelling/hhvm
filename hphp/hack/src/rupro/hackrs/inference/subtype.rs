@@ -324,7 +324,7 @@ fn simp_class<R: Reason>(
     tp_sups: &[Ty<R>],
 ) -> Result<Prop<R>> {
     let exact_match = match (exact_sub, exact_sup) {
-        (Exact::Nonexact, Exact::Exact) => false,
+        (Exact::Inexact, Exact::Exact) => false,
         _ => true,
     };
     if cn_sub.id() == cn_sup.id() {
