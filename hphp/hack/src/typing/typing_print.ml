@@ -822,7 +822,7 @@ module ErrorString = struct
     | Tdependent (dep, _cstr) -> dependent dep
     | Tclass ((_, x), Exact, tyl) ->
       "an object of exactly the class " ^ strip_ns x ^ inst env tyl
-    | Tclass ((_, x), Nonexact, tyl) ->
+    | Tclass ((_, x), Inexact, tyl) ->
       "an object of type " ^ strip_ns x ^ inst env tyl
     | Tshape _ -> "a shape"
     | Tunapplied_alias _ ->
@@ -1200,7 +1200,7 @@ module Json = struct
           aux_args args ~keytrace >>= fun tyl ->
           (* NB: "class" could have come from either a `Tapply` or a `Tclass`. Right
            * now, we always return a `Tclass`. *)
-          ty (Tclass ((class_pos, name), Nonexact, tyl))
+          ty (Tclass ((class_pos, name), Inexact, tyl))
         | "shape" ->
           get_array "fields" (json, keytrace)
           >>= fun (fields, fields_keytrace) ->

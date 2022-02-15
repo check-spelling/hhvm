@@ -99,7 +99,7 @@ arena_deserializer::impl_deserialize_in_arena!(IfcFunDecl<'arena>);
 #[repr(C)]
 pub enum Exact {
     Exact,
-    Nonexact,
+    Inexact,
 }
 impl TrivialDrop for Exact {}
 arena_deserializer::impl_deserialize_in_arena!(Exact);
@@ -730,7 +730,7 @@ pub enum Ty_<'a> {
     Tdependent(&'a (DependentType, &'a Ty<'a>)),
     /// An instance of a class or interface, ty list are the arguments
     /// If exact=Exact, then this represents instances of *exactly* this class
-    /// If exact=Nonexact, this also includes subclasses
+    /// If exact=Inexact, this also includes subclasses
     #[serde(deserialize_with = "arena_deserializer::arena", borrow)]
     Tclass(&'a (PosId<'a>, Exact, &'a [&'a Ty<'a>])),
     /// The negation of the type in neg_type

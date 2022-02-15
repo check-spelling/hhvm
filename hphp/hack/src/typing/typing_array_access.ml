@@ -808,7 +808,7 @@ let widen_for_assign_array_append ~expr_pos env ty =
       List.map_env env tyl ~f:(fun env _ty ->
           Env.fresh_type_invariant env expr_pos)
     in
-    let ty = mk (r, Tclass (id, Nonexact, params)) in
+    let ty = mk (r, Tclass (id, Inexact, params)) in
     (env, Some ty)
   | _ -> (env, None)
 
@@ -972,7 +972,7 @@ let widen_for_assign_array_get ~expr_pos index_expr env ty =
       List.map_env env tyl ~f:(fun env _ty ->
           Env.fresh_type_invariant env expr_pos)
     in
-    let ty = mk (r, Tclass (id, Nonexact, params)) in
+    let ty = mk (r, Tclass (id, Inexact, params)) in
     (env, Some ty)
   | (r, Ttuple tyl) ->
     (* requires integer literal *)
