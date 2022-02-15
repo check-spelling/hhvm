@@ -139,15 +139,15 @@ enum class GCBits : uint8_t {};
  * Special headers have non-refcount uses for m_aux32:
  *
  * 0          32     40      48
- * [ ar_off | kind | marks |              ] AsyncFuncFrame (NativeNode)
- * [ ar_off | kind | marks | tyindex:16   ] NativeData (NativeNode)
- * [ size   | kind | marks |              ] ClosureHeader (ClosureHdr)
- * [ objoff | kind | marks |              ] MemoData
- * [        | kind | marks | tyindex:16   ] Cpp, SmallMalloc (MallocNode)
- * [ index  | kind | marks | tyindex:16   ] BigMalloc (MallocNode)
- * [ index  | kind | marks | kIndexUnkown ] BigObj (MallocNode)
- * [ size   | kind | marks |              ] Free, Hole (FreeNode)
- * [        | kind |       |              ] Slab
+ * [ ar_off | kind | marks |               ] AsyncFuncFrame (NativeNode)
+ * [ ar_off | kind | marks | tyindex:16    ] NativeData (NativeNode)
+ * [ size   | kind | marks |               ] ClosureHeader (ClosureHdr)
+ * [ objoff | kind | marks |               ] MemoData
+ * [        | kind | marks | tyindex:16    ] Cpp, SmallMalloc (MallocNode)
+ * [ index  | kind | marks | tyindex:16    ] BigMalloc (MallocNode)
+ * [ index  | kind | marks | kIndexUnknown ] BigObj (MallocNode)
+ * [ size   | kind | marks |               ] Free, Hole (FreeNode)
+ * [        | kind |       |               ] Slab
  */
 
 /*
