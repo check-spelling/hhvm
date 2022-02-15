@@ -542,7 +542,7 @@ bool TypeConstraint::checkImpl(tv_rval val,
         case MetaType::Nothing:
         case MetaType::NoReturn:
           assertx(!isProp);
-          // fallthrogh
+          // fallthrough
         case MetaType::Precise:
         case MetaType::Number:
         case MetaType::ArrayKey:
