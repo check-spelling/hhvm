@@ -102,7 +102,7 @@ fn emit_generator_method<'arena>(
             ],
         ),
         "valid" => instr::contvalid(alloc),
-        "current" => instr::contcurrent(alloc),
+        "current" => instr::concurrent(alloc),
         "key" => instr::contkey(alloc),
         "getReturn" => instr::contgetreturn(alloc),
         _ => {
