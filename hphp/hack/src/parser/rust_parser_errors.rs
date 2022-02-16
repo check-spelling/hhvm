@@ -633,7 +633,7 @@ where
         }
     }
 
-    // test a node is a syntaxlist and that the list contains an element
+    // test a node is a syntax list and that the list contains an element
     // satisfying a given predicate
     fn list_contains_predicate<P>(p: P, node: S<'a, Token, Value>) -> bool
     where
