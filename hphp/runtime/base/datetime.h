@@ -135,7 +135,7 @@ struct DateTime final : SweepableResourceData {
 
     /**
      * Preliminary specification:
-     *   http://wp.netscape.com/newsref/std/cookie_spec.html
+     *   https://web.archive.org/web/20020813042548/http://wp.netscape.com:80/newsref/std/cookie_spec.html
      *   "This is based on RFC 822, RFC 850,  RFC 1036, and  RFC 1123,
      *   with the variations that the only legal time zone is GMT
      *   and the separators between the elements of the date must be dashes."
