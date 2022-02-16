@@ -2894,7 +2894,7 @@ where
                     continue;
                 }
                 // test part of conditional expression is considered legal location if
-                //  onditional expression itself is in legal location
+                // conditional expression itself is in legal location
                 ConditionalExpression(x) if std::ptr::eq(node, &x.test) => {
                     continue;
                 }
