@@ -571,7 +571,7 @@ void iopRetC(PC& /* pc */) {
   const auto sources = Configuration::get()->sources(name);
   FTRACE(3, "taint: {} sources\n", sources.size());
 
-  // Check if thisjctdkrvujthe origin of a source.
+  // Check if this function is the origin of a source.
   if (!sources.empty()) {
     FTRACE(1, "taint: function returns source\n");
     Path path;
