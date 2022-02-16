@@ -1005,7 +1005,7 @@ where
             }
             ReifiedTypeArgument(_) => {
                 Self::raise_parsing_error(node, env, &syntax_error::invalid_reified);
-                Self::missing_syntax("refied type", node, env)
+                Self::missing_syntax("reified type", node, env)
             }
             _ => Self::missing_syntax("type hint", node, env),
         }

@@ -1846,7 +1846,7 @@ private:
    */
   bool m_hasReifiedGenerics      : 1;
   /*
-   * This class has a refied parent.
+   * This class has a reified parent.
    */
   bool m_hasReifiedParent        : 1;
   /*
