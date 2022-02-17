@@ -67,7 +67,7 @@ pub struct TypeConst<R: Reason> {
     pub origin: TypeName,
     pub enforceable: Option<R::Pos>, // When Some, points to __Enforceable attribute
     pub reifiable: Option<R::Pos>,   // When Some, points to __Reifiable attribute
-    pub is_concreteized: bool,
+    pub is_concretized: bool,
     pub is_ctx: bool,
 }
 
