@@ -604,7 +604,7 @@ ArrayData* loadClsTypeCnsHelper(
         raise_error("Type constant %s::%s is abstract",
                     cls->name()->data(), name->data());
       } else {
-        raise_error("Non-existent type constant %s::%s",
+        raise_error("Nonexistent type constant %s::%s",
                     cls->name()->data(), name->data());
       }
     }

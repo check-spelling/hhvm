@@ -670,14 +670,14 @@ functor
         | None -> Backend.remove key
         | Some stack ->
           (match Hashtbl.find_opt stack.current key with
-          | Some Remove -> failwith "Trying to remove a non-existent value"
+          | Some Remove -> failwith "Trying to remove a nonexistent value"
           | Some (Replace _) -> Hashtbl.replace stack.current key Remove
           | Some (Add _) -> Hashtbl.remove stack.current key
           | None ->
             if mem stack.prev key then
               Hashtbl.replace stack.current key Remove
             else
-              failwith "Trying to remove a non-existent value")
+              failwith "Trying to remove a nonexistent value")
 
       (*
        * Transitions table:

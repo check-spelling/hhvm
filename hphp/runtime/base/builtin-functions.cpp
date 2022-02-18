@@ -717,7 +717,7 @@ Variant o_invoke_failed(const char *cls, const char *meth,
     msg += meth;
     raise_fatal_error(msg.c_str());
   } else {
-    raise_warning("call_user_func to non-existent method %s::%s", cls, meth);
+    raise_warning("call_user_func to nonexistent method %s::%s", cls, meth);
     return false;
   }
 }

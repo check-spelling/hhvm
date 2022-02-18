@@ -1189,7 +1189,7 @@ function lstat(string $filename): mixed;
  *   you may elect to clear the status cache. In these cases, you can use the
  *   clearstatcache() function to clear the information that PHP caches about a
  *   file.  You should also note that PHP doesn't cache information about
- *   non-existent files. So, if you call file_exists() on a file that doesn't
+ *   nonexistent files. So, if you call file_exists() on a file that doesn't
  *   exist, it will return FALSE until you create the file. If you create the
  *   file, it will return TRUE even if you then delete the file. However
  *   unlink() clears the cache automatically.  This function caches information

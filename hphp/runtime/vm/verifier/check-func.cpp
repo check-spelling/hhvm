@@ -1173,7 +1173,7 @@ bool FuncChecker::checkOp(State* cur, PC pc, Op op, Block* b, PC prev_pc) {
         }
         auto const prop = m_func->ue().lookupLitstr(getImm(pc, 0).u_SA);
         if (!m_func->pce() || !m_func->pce()->hasProp(prop)){
-             ferror("{} references non-existent property {}\n",
+             ferror("{} references nonexistent property {}\n",
                     opcodeToName(op), prop);
              return false;
         }

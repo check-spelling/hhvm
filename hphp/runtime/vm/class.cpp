@@ -1312,7 +1312,7 @@ Class::PropSlotLookup Class::findSProp(
 ) const {
   auto const sPropInd = lookupSProp(sPropName);
 
-  // Non-existent property.
+  // Nonexistent property.
   if (sPropInd == kInvalidSlot)
     return PropSlotLookup { kInvalidSlot, false, false, false };
 
