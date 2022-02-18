@@ -171,7 +171,7 @@ typedef struct
  *      continues.  Equivalent to Plan 9 chartorune().
  *
  *      The caller must ensure that the source buffer is long enough that
- *      this routine does not run off the end and dereference non-existent
+ *      this routine does not run off the end and dereference nonexistent
  *      memory looking for trail bytes.  If the source buffer is known to
  *      be '\0' terminated, this cannot happen.  Otherwise, the caller
  *      should call Tcl_UtfCharComplete() before calling this routine to

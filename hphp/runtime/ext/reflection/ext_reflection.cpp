@@ -497,7 +497,7 @@ Variant HHVM_FUNCTION(hphp_get_static_property, const String& cls,
   auto const sd = cls.get();
   auto const class_ = Class::lookup(sd);
   if (!class_) {
-    raise_error("Non-existent class %s", sd->data());
+    raise_error("Nonexistent class %s", sd->data());
   }
   VMRegAnchor _;
   CoeffectsAutoGuard _2;
@@ -528,7 +528,7 @@ void HHVM_FUNCTION(hphp_set_static_property, const String& cls,
   auto const sd = cls.get();
   auto const class_ = Class::lookup(sd);
 
-  if (!class_) raise_error("Non-existent class %s", sd->data());
+  if (!class_) raise_error("Nonexistent class %s", sd->data());
 
   VMRegAnchor _;
   CoeffectsAutoGuard _2;
@@ -575,7 +575,7 @@ Array implTypeStructure(const Variant& cls_or_obj,
     auto const typeAlias = TypeAlias::load(name.get());
 
     if (!typeAlias) {
-      raise_error("Non-existent type alias %s", name.get()->data());
+      raise_error("Nonexistent type alias %s", name.get()->data());
     }
 
     auto const& preresolved = typeAlias->resolvedTypeStructure();
@@ -611,7 +611,7 @@ Array implTypeStructure(const Variant& cls_or_obj,
   auto const cls_sd = cls->name();
 
   if (!cls->hasTypeConstant(cns_sd, true)) {
-    raise_error("Non-existent type constant %s::%s",
+    raise_error("Nonexistent type constant %s::%s",
                 cls_sd->data(), cns_sd->data());
   }
 
