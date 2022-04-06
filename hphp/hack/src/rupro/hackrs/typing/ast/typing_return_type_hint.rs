@@ -31,7 +31,7 @@ pub struct TCReturnTypeHintParams<R: Reason> {
     pub fun_name: Symbol,
 
     /// The function name's position is used as a placeholder position for
-    /// any default return type that has to be egnerated in the absence of
+    /// any default return type that has to be generated in the absence of
     /// a hint.
     pub fun_pos: R::Pos,
 
