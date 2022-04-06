@@ -692,11 +692,11 @@ let hh_time_start_times = ref SMap.empty
 
      hh_time('start', 'Timing 1');
      // Expensive to typecheck code
-     hh_time('stop', 'Timinig 1');
+     hh_time('stop', 'Timing 1');
 
      hh_time('start', 'Timing 2');
      // Some more expensive to typecheck code
-     hh_time('stop', 'Timinig 2');
+     hh_time('stop', 'Timing 2');
 
    Limitation: Timings are not scoped, so multiple uses of the same tag
    with `hh_time('start', tag)` will overwrite the beginning time of the
