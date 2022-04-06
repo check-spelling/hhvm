@@ -604,7 +604,7 @@ class IntlChar {
   const int LB_HYPHEN = 0;
   const int LB_IDEOGRAPHIC = 0;
   const int LB_INSEPARABLE = 0;
-  const int LB_INSEPERABLE = 0;
+  const int LB_INSEPARABLE = 0;
   const int LB_INFIX_NUMERIC = 0;
   const int LB_LINE_FEED = 0;
   const int LB_NONSTARTER = 0;
