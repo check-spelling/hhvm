@@ -77,7 +77,7 @@ b :: 'bool_' ::= {{ com booleans }}
 N, C, I :: 'typename_' ::= {{ com named types }} {{ coq string }}
   | ` typeid ` :: :: User
     {{ com user type name }} {{ tex {\kwd{[[typeid]]} } }}
-    {{ coq "[[typeid]]"%string }}
+    {{ coq "[[typeid]]" % string }}
 
 id :: 'id_' ::= {{ com identifiers }}
 % Just do this so we can get underscores displayed properly!

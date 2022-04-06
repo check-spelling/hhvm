@@ -358,7 +358,7 @@ static bool append_multiple_key_values(String& ret,
                                        LocaleTag tag) {
   auto name = LocaleName(tag);
   if (subtags.exists(name)) {
-    // Sane version: [tag] => string, [tag] => array<tring>
+    // Sane version: [tag] => string, [tag] => array<string>
     auto val = subtags[name];
     if (val.isString()) {
       if (tag == LOC_PRIVATE) {
