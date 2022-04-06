@@ -1394,8 +1394,8 @@ impl<'a: 'b, 'b, 'arena: 'a + 'b> ClosureVisitor<'a, 'b, 'arena> {
             }
         };
 
-        let fun_tparams = scope.fun_tparams().to_vec(); // hiddden .clone()
-        let class_tparams = scope.class_tparams().to_vec(); // hiddden .clone()
+        let fun_tparams = scope.fun_tparams().to_vec(); // hidden .clone()
+        let class_tparams = scope.class_tparams().to_vec(); // hidden .clone()
         let class_num = state.closures.len() + self.ro_state.class_count;
 
         let is_static = if is_long_lambda {
