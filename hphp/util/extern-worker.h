@@ -276,7 +276,7 @@ enum class OutputType { Val, Opt, Vec };
 
 //////////////////////////////////////////////////////////////////////
 
-// Configeration controlling the behavior of Client.
+// Configuration controlling the behavior of Client.
 struct Options {
   // Whether to use the always available "subprocess"
   // implementation. This uses fork+exec (and stores data on disk).
