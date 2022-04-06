@@ -1116,7 +1116,7 @@ and obj_get_inner args env receiver_ty ((id_pos, id_str) as id) on_error :
     merge_ty_err expand_ty_err_opt
     @@ obj_get_inner_union args env on_error id r tyl
   | (r, Tintersection tyl) ->
-    let (is_nonnull, subty_err_opt) =
+    let (is_nonnull, subtype_err_opt) =
       if args.is_nonnull then
         (true, None)
       else
@@ -1126,7 +1126,7 @@ and obj_get_inner args env receiver_ty ((id_pos, id_str) as id) on_error :
           (Typing_make_type.nonnull Reason.none)
     in
     let ty_err_opt =
-      Option.merge expand_ty_err_opt subty_err_opt ~f:Typing_error.both
+      Option.merge expand_ty_err_opt subtype_err_opt ~f:Typing_error.both
     in
     merge_ty_err ty_err_opt
     @@ obj_get_inner_intersection { args with is_nonnull } env on_error id r tyl

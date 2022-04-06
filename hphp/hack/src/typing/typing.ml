@@ -6204,12 +6204,12 @@ and assign_with_subtype_err_ p ur env (e1 : Nast.expr) pos2 ty2 =
       Option.iter ~f:Errors.add_typing_error ty_err_opt;
       (match ty_err_opt with
       | None ->
-        let (env, te, ty, subty_errs) = type_list_elem env in
+        let (env, te, ty, subtype_errs) = type_list_elem env in
         let err_opt =
-          if List.for_all subty_errs ~f:Option.is_none then
+          if List.for_all subtype_errs ~f:Option.is_none then
             None
           else
-            Some (ty2, pack_errs pos2 ty2 (subty_errs, None))
+            Some (ty2, pack_errs pos2 ty2 (subtype_errs, None))
         in
         (env, te, ty, err_opt)
       | Some _ ->

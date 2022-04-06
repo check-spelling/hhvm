@@ -82,7 +82,7 @@ pub fn emit_impl_targets(input: TokenStream, opcodes: &[OpcodeData]) -> Result<T
         fn is_label_type(imm_ty: &ImmType) -> bool {
             match imm_ty {
                 ImmType::BA | ImmType::BA2 | ImmType::FCA | ImmType::BLA => true,
-                ImmType::ARR(subty) => is_label_type(subty),
+                ImmType::ARR(subtype) => is_label_type(subtype),
                 ImmType::AA
                 | ImmType::DA
                 | ImmType::I64A
