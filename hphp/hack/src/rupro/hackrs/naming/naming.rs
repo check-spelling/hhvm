@@ -58,7 +58,7 @@ fn fun_param(p: &mut aast::FunParam<(), ()>) {
 }
 
 fn fun_paraml(pl: &mut Vec<aast::FunParam<(), ()>>) {
-    rupro_todo_mark!(MissingError, "check repitition");
+    rupro_todo_mark!(MissingError, "check repetition");
     pl.iter_mut().for_each(fun_param);
 }
 
