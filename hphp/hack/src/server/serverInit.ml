@@ -214,7 +214,7 @@ let lazy_write_symbol_info_init genv env root (load_state : 'a option) profiling
   | None ->
     ( ServerLazyInit.write_symbol_info_full_init genv env profiling
       |> post_init genv,
-      Load_state_declined "Write Symobl info state" )
+      Load_state_declined "Write Symbol info state" )
   | Some load_state_approach ->
     lazy_saved_state_init
       ~do_indexing:true
