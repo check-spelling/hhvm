@@ -356,7 +356,7 @@ fn simp_prim<R: Reason>(prim_sub: &Prim, prim_sup: &Prim) -> Prop<R> {
     }
 }
 
-/// Normalize the propostion `fn <: fn`
+/// Normalize the proposition `fn <: fn`
 fn simp_fun<R: Reason>(
     cfg: &SubtypeConfig,
     env: &mut SubtypeEnv<R>,
@@ -443,7 +443,7 @@ fn simp_ty_typaram<R: Reason>(
     }
 }
 
-/// Normalize the propostion `T1 <: U /\ T2 <: U`
+/// Normalize the proposition `T1 <: U /\ T2 <: U`
 fn simp_conj_sub<R: Reason>(
     cfg: &SubtypeConfig,
     env: &mut SubtypeEnv<R>,
@@ -772,7 +772,7 @@ mod tests {
         let ty_int = Ty::int(NReason::none());
 
         // if we attempt to subtype T against some supertype that already
-        // appears in its set of visited supertypes, we expect the propositionn
+        // appears in its set of visited supertypes, we expect the proposition
         // to be invalid
         env.visited_goals
             .0
