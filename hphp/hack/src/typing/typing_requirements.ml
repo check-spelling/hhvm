@@ -62,7 +62,7 @@ let check_require_class env class_pos tc (trait_pos, req_ty) =
                 { pos = class_pos; trait_pos; req_pos; req_name }));
       env
 
-(* HHVM enformcement rejects conflicting require class and require extends
+(* HHVM enforcement rejects conflicting require class and require extends
    constraints on the same class, eg:
 
   trait T1 { require extends C; }
