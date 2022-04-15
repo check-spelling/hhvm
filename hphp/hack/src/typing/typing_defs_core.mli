@@ -552,7 +552,7 @@ type can_index = {
 
 (* A can_traverse represents the ability to do a foreach over a certain type.
    We should have t <: {ct_key; ct_val; ct_is_await} when type t supports foreach
-   and doing the foreack will bind values of type ct_val, and optionally bind keys of
+   and doing the foreach will bind values of type ct_val, and optionally bind keys of
    type ct_key. *)
 type can_traverse = {
   ct_key: locl_ty option;
